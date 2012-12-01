@@ -102,7 +102,7 @@ int main(void) {
 		//printf("%s%c%c\n","Content-Type:text/html;charset=iso-8859-1",13,10);
 		printf("<html><head><title>Login Error!</title></head>");	
 		printf("<body>Login information incorrect! Click below to return to home.<p>");	
-		printf("<a href=\"http://www.cs.mcgill.ca/~parauj2/homepage\">HOME<a><br />");
+		printf("<a href=\"http://www.cs.mcgill.ca/~parauj2/homepage\">HOME</a><br />");
 		printf("</body></html>");
 		exit(EXIT_FAILURE);
 	} 

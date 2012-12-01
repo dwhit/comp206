@@ -47,9 +47,11 @@ int verify(char username[50], char password[50]) {
 			//printf("%s%c%c\n","Content-Type:text/html;charset= iso-8859-1",13,10);		
 			//printf("user info matches");
 			if(strcmp(ftype, "user") == 0) {
+				return 0;
+			}
+			else {
 				return 2;
 			}
-			else return 0;
 		}
 	}
 	//if end of file is reached, close the file and return EXIT_FAILURE.

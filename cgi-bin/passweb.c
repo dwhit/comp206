@@ -178,11 +178,11 @@ int del(char username[50]) {
 int edit(char username[50], char password[50], char type[50], char user2[50], char pass2[50], char type2[50]) {
 
 	//first check that the old username and password does exist
-	if (verify(username, password)) {
+	if (verify(username, password)==1) {
 		return EXIT_FAILURE;
 	}
 	//then check that the new username and password does not exist
-	if (!verify(user2, pass2)) {
+	if (!(verify(user2, pass2))==1) {
 		return EXIT_FAILURE;
 	}
 

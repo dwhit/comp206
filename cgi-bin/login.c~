@@ -109,7 +109,16 @@ int main(void) {
 	
 	//else the exit status must have been EXIT_SUCCESS
 	else if(WEXITSTATUS(status) == 0) {
-		printf("User!\n");
+		printf("<html><head><title>User Menu</title></head>");
+		printf("<body>Welcome to the user prefrences page for Python Pearls ++.<p>");
+		printf("<form name=\"input\" action=\"menu.cgi\" method=\"get\">");
+		printf("<input type=\"radio\" name=\"option\" value=\"H\">View Purchase History.<br>");
+		printf("<input type=\"radio\" name=\"option\" value=\"C\">Change Password: &nbsp;");
+		printf("<input type=\"text\" name=\"newpass\"><br>");
+		printf("<a href=\"http://www.cs.mcgill.ca/~gmacra/homepage\">Return Home.</a><br>");
+		printf("<input type=\"hidden\" name=\"user\" value=\"%s\">", username);
+ 		printf("<input type=\"hidden\" name=\"oldpass\" value=\"%s\">", password);
+		printf("<input type=\"submit\" value=\"Submit\"></form></body></html>");
 		exit(EXIT_SUCCESS);
 	}
 	else {

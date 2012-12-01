@@ -182,7 +182,7 @@ int edit(char username[50], char password[50], char type[50], char user2[50], ch
 		return EXIT_FAILURE;
 	}
 	//then check that the new username and password does not exist
-	if (!(verify(user2, pass2))==1) {
+	if (!(verify(user2, pass2)==1)) {
 		return EXIT_FAILURE;
 	}
 
@@ -222,15 +222,15 @@ int main(int argc, char *argv[]) {
 
 	//if there are no arguments, print out error and quit.
 	if(argc < 2){
-		printf("Error: No arguments found.\n");
-		printf("%s", error);
+		//printf("Error: No arguments found.\n");
+		//printf("%s", error);
 		exit(EXIT_FAILURE);
 	}
 
 	//if the first argument isn't a switch, print out error and quit.
 	if(*argv[1] != '-'){
-		printf("Error: Switch must be first argument\n");
-		printf("%s", error);
+		//printf("Error: Switch must be first argument\n");
+		//printf("%s", error);
 		exit(EXIT_FAILURE);
 	}
 	
@@ -245,23 +245,23 @@ int main(int argc, char *argv[]) {
 		
 		//if there are less than 5 arguments, print error and quit.
 		if (argc < 5) {
-			printf("\nError: Not enough arguments.\n");
-			printf("%s\n", error);
+			//printf("\nError: Not enough arguments.\n");
+			//printf("%s\n", error);
 			exit(EXIT_FAILURE);
 		}
 		//if the second argument starts with a '-', then it is a switch,
 		//so print an error message and quit.
 		if (*argv[2] == '-') {
-			printf("\nError: cannot have two switches\n");
-			printf("%s\n", error);
+			//printf("\nError: cannot have two switches\n");
+			//printf("%s\n", error);
 			exit(EXIT_FAILURE);
 		} else {
 			//add the given user
 			if (add(argv[2], argv[3], argv[4])) {
-				printf("Could not add user.\n");
+				//printf("Could not add user.\n");
 				exit(EXIT_FAILURE);
 			} else {
-				printf("User added.\n");
+				//printf("User added.\n");
 				exit(EXIT_SUCCESS);
 			}
 		}
@@ -271,23 +271,23 @@ int main(int argc, char *argv[]) {
 
 		//if there are less than 3 arguments, print error and quit.
 		if (argc < 3) {
-			printf("\nError: Not enough arguments.\n");
-			printf("%s\n", error);
+			//printf("\nError: Not enough arguments.\n");
+			//printf("%s\n", error);
 			exit(EXIT_FAILURE);
 		}
 		//if the second argument starts with a '-', then it is a switch,
 		//so print an error message and quit.
 		if (*argv[2] == '-') {
-			printf("\nError: cannot have two switches\n");
-			printf("%s\n", error);
+			//printf("\nError: cannot have two switches\n");
+			//printf("%s\n", error);
 			exit(EXIT_FAILURE);
 		} else {
 			//delete the given user
 			if (del(argv[2])) {
-				printf("Could not remove user.\n");
+				//printf("Could not remove user.\n");
 				exit(EXIT_FAILURE);
 			} else {
-				printf("User removed.\n");
+				//printf("User removed.\n");
 				exit(EXIT_SUCCESS);
 			}
 		}
@@ -297,23 +297,23 @@ int main(int argc, char *argv[]) {
 		
 		//if there are less than 8 arguments, print error and quit.		
 		if (argc < 8) {
-			printf("\nError: Not enough arguments.\n");
-			printf("%s\n", error);
+			//printf("\nError: Not enough arguments.\n");
+			//printf("%s\n", error);
 			exit(EXIT_FAILURE);
 		}
 		//if the second argument starts with a '-', then it is a switch,
 		//so print an error message and quit.
 		if (*argv[2] == '-') {
-			printf("\nError: cannot have two switches\n");
-			printf("%s\n", error);
+			//printf("\nError: cannot have two switches\n");
+			//printf("%s\n", error);
 			exit(EXIT_FAILURE);
 		} else {
 			//edit the given user info
 			if (edit(argv[2], argv[3], argv[4], argv[5], argv[6], argv[7])) {
-				printf("Could not edit information.\n");
+				//printf("Could not edit information.\n");
 				exit(EXIT_FAILURE);
 			} else {
-				printf("Information edited.\n");
+				//printf("Information edited.\n");
 				exit(EXIT_SUCCESS);
 			}
 		}
@@ -323,15 +323,15 @@ int main(int argc, char *argv[]) {
 		
 		//if there are less than 4 arguments, print error and quit.
 		if (argc < 4) {
-			printf("\nError: Not enough arguments.\n");
-			printf("%s\n", error);
+			//printf("\nError: Not enough arguments.\n");
+			//printf("%s\n", error);
 			exit(EXIT_FAILURE);
 		}
 		//if the second argument starts with a '-', then it is a switch,
 		//so print an error message and quit.
 		if (*argv[2] == '-') {
-			printf("\nError: cannot have two switches\n");
-			printf("%s\n", error);
+			//printf("\nError: cannot have two switches\n");
+			//printf("%s\n", error);
 			exit(EXIT_FAILURE);
 		} else {
 			//verify the given user and password
@@ -344,8 +344,8 @@ int main(int argc, char *argv[]) {
 	//starts with a '-' but isn't any of the allowed switches. Most likely
 	//a typo.
 	else {
-		printf("Must enter a proper switch as first argument");
-		printf("%s", error);
+		//printf("Must enter a proper switch as first argument");
+		//printf("%s", error);
 		exit(EXIT_FAILURE);
 	}
 }

@@ -178,11 +178,11 @@ int del(char username[50]) {
 int edit(char username[50], char password[50], char type[50], char user2[50], char pass2[50], char type2[50]) {
 
 	//first check that the old username and password does exist
-	if (verify(username, password)) {
+	if (verify(username, password)==1) {
 		return EXIT_FAILURE;
 	}
 	//then check that the new username and password does not exist
-	if (!verify(user2, pass2)) {
+	if (!(verify(user2, pass2)==1)) {
 		return EXIT_FAILURE;
 	}
 
@@ -297,23 +297,23 @@ int main(int argc, char *argv[]) {
 		
 		//if there are less than 8 arguments, print error and quit.		
 		if (argc < 8) {
-			printf("\nError: Not enough arguments.\n");
-			printf("%s\n", error);
+			//printf("\nError: Not enough arguments.\n");
+			//printf("%s\n", error);
 			exit(EXIT_FAILURE);
 		}
 		//if the second argument starts with a '-', then it is a switch,
 		//so print an error message and quit.
 		if (*argv[2] == '-') {
-			printf("\nError: cannot have two switches\n");
-			printf("%s\n", error);
+			//printf("\nError: cannot have two switches\n");
+			//printf("%s\n", error);
 			exit(EXIT_FAILURE);
 		} else {
 			//edit the given user info
 			if (edit(argv[2], argv[3], argv[4], argv[5], argv[6], argv[7])) {
-				printf("Could not edit information.\n");
+				//printf("Could not edit information.\n");
 				exit(EXIT_FAILURE);
 			} else {
-				printf("Information edited.\n");
+				//printf("Information edited.\n");
 				exit(EXIT_SUCCESS);
 			}
 		}

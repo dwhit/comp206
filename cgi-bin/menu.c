@@ -55,7 +55,7 @@ int main() {
 
 
 
-			printf("<a href=\"http://www.cs.mcgill.ca/~parauj2/homepage\">HOME</a><br>");
+			printf("<a href=\"http://www.cs.mcgill.ca/~dwhitn/pythonpearlsplusplus.html\">HOME</a><br>");
 			printf("<form><input type=\"button\" value =\"Back to menu\" onClick=\"history.go(-1);return true;\"></form><br>");
 			printf("</body></html>");
 			return(0);
@@ -73,7 +73,7 @@ int main() {
 
 				//printf("User from query_string = ^%s^ <br><br>", user);
 	
-				printf("<a href=\"http://www.cs.mcgill.ca/~parauj2/homepage\">HOME</a><br>");
+				printf("<a href=\"http://www.cs.mcgill.ca/~dwhitn/pythonpearlsplusplus.html\">HOME</a><br>");
 				printf("<form><input type=\"button\" value =\"Back to menu\" onClick=\"history.go(-1);return true;\"></form><br>");		
 				printf("</body></html>");
 
@@ -87,7 +87,7 @@ int main() {
 
 				//printf("User from query_string = ^%s^ <br><br>", user);
 		
-				printf("<a href=\"http://www.cs.mcgill.ca/~parauj2/homepage\">HOME</a><br>");
+				printf("<a href=\"http://www.cs.mcgill.ca/~dwhitn/pythonpearlsplusplus.html\">HOME</a><br>");
 				printf("<form><input type=\"button\" value =\"Back to menu\" onClick=\"history.go(-1);return true;\"></form><br>");			
 				printf("</body></html>");
 				return(EXIT_SUCCESS);	

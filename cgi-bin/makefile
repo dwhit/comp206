@@ -1,29 +1,29 @@
-passweb.cgi : passweb.o menu.cgi login.cgi
-	gcc -o passweb.cgi passweb.o
+passweb.cgi : passweb2.o menu.cgi login.cgi
+	gcc -o passweb.cgi passweb2.o
 	chmod 755 passweb.cgi
 
-passweb.o : passweb.c
-	gcc -c passweb.c
-	chmod 755 passweb.o 
-	chmod 755 passweb.c
+passweb2.o : passweb2.c
+	gcc -c passweb2.c
+	chmod 755 passweb2.o 
+	chmod 755 passweb2.c
 
-menu.cgi : menu.o
-	gcc -o menu.cgi menu.o
+menu.cgi : menu2.o
+	gcc -o menu.cgi menu2.o
 	chmod 755 menu.cgi
 
-menu.o : menu.c
-	gcc -c menu.c
-	chmod 755 menu.o
-	chmod 755 menu.c
+menu2.o : menu2.c
+	gcc -c menu2.c
+	chmod 755 menu2.o
+	chmod 755 menu2.c
 
-login.cgi : login.o
-	gcc -o login.cgi login.o
+login.cgi : log.o
+	gcc -o login.cgi log.o
 	chmod 755 login.cgi
 
-login.o : login.c
-	gcc -c login.c
-	chmod 755 login.o
-	chmod 755 login.c
+log.o : log.c
+	gcc -c log.c
+	chmod 755 log.o
+	chmod 755 log.c
 
 gitup :
 	cd ..

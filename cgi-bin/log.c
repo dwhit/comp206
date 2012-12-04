@@ -43,30 +43,24 @@ int main(void)
 	//size of password	
 	int y;
 
-	y=n-u-19; //total char- (char in user)-19(8 for user 8 for pass 3 for ==&
-//	printf("n=%d,y=%d,x=%d<br />",n,y,u);
+	y=n-u-19;
 	
-		
 	char password[y];
  	if(u==0 || y==0)
 	{
-		printf("MUST ENTER A USERNAME AND PASSWORD");
-		printf("<br /><form><input type=\"button\" value =\"Back to Login \" onClick=\"history.go(-1);return true;\"></form><br>");
-		printf("<form action=\"http://www.cs.mcgill.ca/~dwhitn/pythonpearlsplusplus.html\"><input value=\"Homepage\" type=\"submit\"></form>");
+		printf("<html><head><title>Login Error!</title></head><body bgcolor=\"red\">");		
+		printf("<font face=\"Helvetica\" color=\"Black\">MUST ENTER A USERNAME AND PASSWORD</font>");
+		printf("<br/><br/><form><input type=\"button\" value =\"Back to Login \" onClick=\"history.go(-1);return true;\"></form><br>");
+		printf("<form action=\"http://www.cs.mcgill.ca/~dwhitn/pythonpearlsplusplus.html\"><input value=\"Homepage\" type=\"submit\"></form></font></body></html>");
 		exit(EXIT_FAILURE);
 	}
 	sscanf(inputArray,"username=%[^&]&password=%s",username,password);
-
-	//printf("<br /> username:%s<br />password:%s <br />",username,password);
-
 	verify(&username, &password);
 	return 0;
 }
 
 int verify(char *user, char *pass)
-{
-//	printf("%s,%d,%d,%s",user,strlen(user),strlen(pass),pass);
-	
+{	
 	char u[strlen(user)];
 	char p[strlen(pass)];
 	char t[10];
@@ -84,15 +78,9 @@ int verify(char *user, char *pass)
 	{
 		while(!feof(pFile))
 		{
-			fscanf(pFile, "%[^,], %[^,],%s\n", u, p, t);
-//			printf("<br/>%s,%s,%s<br />",u,p,t);
-//			printf("%d,%d<br />",strcmp(u,user),strcmp(p,pass));
-
-		
+			fscanf(pFile, "%[^,], %[^,],%s\n", u, p, t);	
 			if(strcmp(user,u)==0 && strcmp(pass,p)==0){
 				fclose(pFile);
-		//		char SYS[6];
-//				printf("type =%s,SYS=%s,USE=%s,%d",t,SYS,USE,strcmp(t,SYS));
 				if(!strcmp(t,USE) || !strcmp(t,SYS))
 				{
 					return(menu(&t, &u, &p));
@@ -107,9 +95,11 @@ int verify(char *user, char *pass)
 			}
 		}
 	}
-	printf("<br>INCORRECT PASSWORD OR USERNAME<br><br>");
-	printf("<a href=\"http://www.cs.mcgill.ca/~dwhitn/pythonpearlsplusplus.html\"> HOME<a><br />");
-	fclose(pFile);
+	fclose(pFile);	
+	printf("<html><head><title>Login Error!</title></head><body bgcolor=\"red\">");	
+	printf("<font face=\"Helvetica\" color=\"Black\">INCORRECT PASSWORD OR USERNAME</font>");
+	printf("<br/><br/><form><input type=\"button\" value =\"Back to Login \" onClick=\"history.go(-1);return true;\"></form><br>");
+	printf("<form action=\"http://www.cs.mcgill.ca/~dwhitn/pythonpearlsplusplus.html\"><input value=\"Homepage\" type=\"submit\"></form></font></body></html>");
 	return EXIT_FAILURE;
 	
 }
@@ -121,9 +111,8 @@ int menu(char *type, char *user, char *password)
 	char SYS[7]="SYSTEM";
 	if(strcmp(type,USER)==0)
 	{
-		//printf("<br />%s<br />",type);
 		printf("<html><head><title>User Menu</title></head>");
-		printf("<body>Welcome to the user prefrences page for Python Pearls ++.<p>");
+		printf("<body bgcolor=\"6699CC\"><font face=\"Helvetica\">Welcome to the user prefrences page for Python Pearls ++.<p>");
 		printf("<form name=\"input\" action=\"menu.cgi\" method=\"get\">");
 		printf("<input type=\"hidden\" name=\"type\" value=\"USER\">");			
 		printf("<input type=\"hidden\" name=\"user\" value=\"%s\">", user);
@@ -132,28 +121,21 @@ int menu(char *type, char *user, char *password)
 		printf("<input type=\"radio\" name=\"option\" value=\"C\">Change Password.<br>");
 		printf("<input type=\"password\" name=\"newpass\"><br>");
 		printf("<input type=\"submit\" value=\"Submit\"></form><br><br>");
-		printf("<a href=\"http://www.cs.mcgill.ca/~dwhitn/pythonpearlsplusplus.html\">Return Home.</a></body></html>");
+		printf("<form action=\"http://www.cs.mcgill.ca/~dwhitn/pythonpearlsplusplus.html\"><input value=\"Homepage\" type=\"submit\"></form></font></body></html>");
 		return EXIT_SUCCESS;
 	}
 
 	else if(!strcmp(type,SYS))
 	{
-		printf("<html>\n<head>\n<title>SYSTEM MENU</title><br /><center>Welcome to the SYSTEM MENU<br /> <br />");
-		printf("</head>");
-	
-		printf("<body>\n <form name=\"input\" action=\"menu.cgi\" method=\"get\">");
-		
+		printf("<html><head><title>SYSTEM MENU</title></head><body bgcolor=\"6699CC\"><font face=\"Helvetica\"><center>Welcome to the SYSTEM MENU<br/><br/>Usage: You may only select one option: ADD, DEL, EDIT, VERIFY, or INVENTORY. Only fill in text boxes relavent to you selection.<br/><br/>");
+		printf("<form name=\"input\" action=\"menu.cgi\" method=\"get\">");
 		printf("<input type=\"hidden\" name=\"type\" value=\"SYSTEM\">");
-
-
 		printf("<input type=\"radio\" name=\"opt\" value=\"a\" >ADD<br />");
 		printf("Username<input type=\"text\"  name=\"user\">");
 		printf("Password<input type=\"text\"  name=\"pass\">");
 		printf("Type<input type=\"text\" name=\"type\">");
-
 		printf("<br /><br /><input type=\"radio\" name=\"opt\" value=\"d\">DEL<br />");
 		printf("Username<input type=\"text\" name=\"user\">");
-		
 		printf("<br /><br /><input type=\"radio\" name=\"opt\" value=\"e\">EDIT<br />");
 		printf("Old Username<input type=\"text\" name=\"Ouser\">");
 		printf("Old Password<input type=\"text\" name=\"Opass\">");
@@ -161,18 +143,13 @@ int menu(char *type, char *user, char *password)
 		printf("<br />New Username<input type=\"text\" name=\"Nuser\">");
 		printf("New Password<input type=\"text\" name=\"Npass\">");
 		printf("New Type<input type=\"text\" name=\"Ntype\">");
-
-
 		printf("<br /><br/><input type=\"radio\" name=\"opt\" value=\"v\">VERIFY<br />");
 		printf("Username<input type=\"text\" name=\"user\">");
 		printf("Password<input type=\"text\" name=\"pass\">");
-
-		printf("<br /><br /><input type=\"radio\" name=\"opt\" value=\"i\">Inventory<br />");
-		//printf("<input type=\"hidden\" name=\"type\" value=\"SYSTEM\">");
-
-		printf("<input type=\"submit\" value=\"Submit\">\n</form>\n</center></body></html>");
+		printf("<br /><br /><input type=\"radio\" name=\"opt\" value=\"i\">INVENTORY<br />");
+		printf("<input type=\"submit\" value=\"Submit\"></form>");
 	
-		printf("<a href=\"http://www.cs.mcgill.ca/~dwhitn/pythonpearlsplusplus.html\">HOME</a><br />");
+		printf("<form action=\"http://www.cs.mcgill.ca/~dwhitn/pythonpearlsplusplus.html\"><input value=\"Homepage\" type=\"submit\"></form></center></font></body></html>");
 		
 
 

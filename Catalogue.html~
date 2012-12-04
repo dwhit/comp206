@@ -1,0 +1,85 @@
+<title>Catalogue</title>
+</head>
+<center>
+<body bgcolor="green">
+	<a href="http://www.cs.mcgill.ca/~gmacra/homepage"> HOME<a><br/>
+	<br/>
+	<br/>
+<form action="purchase.py" method="post">
+<!--========================= TABLE===============================
+==================================================================-->
+	<!-- !!!!TOP ROW !!!! --->
+	<table border="1">
+		<tr>
+		<th></th>
+		<th>Item</th>
+		<th>Description</th>
+		<th>Picture</th>
+		<th>Selected</th>
+		<th>Amount</th>
+			
+	<!-- !!!!1st ITEM: 2ND ROW!!!!!--->
+		</tr>
+		<th>001</th>
+			<td>Freshly-killed-pigeon coloured ruby</td>
+			<td>Is there anything more beautiful than the first drops of blood of a freshly killed-pigeon? Why yes, yes there is. Rubies have all the beauty, without the mess. Now you can revel in the beauty of this colour without being a menace to your neighbourhood pigeons.</td>
+			<td><img src="http://www.cs.mcgill.ca/~parauj2/001.png" width ="200" height="200"></td>
+			<td><input type="checkbox" name="item1"></td>
+			<td><input type="text" name="item1A"></td>
+		</tr>
+	<!-- !!!!2nd ITEM: 3RD ROW!!!!!--->
+		<tr>
+		<th>010</th>
+			<td>Ruby-eyed python</td>
+			<td>Why give your sibling an aquarium for Christmas, when you could give them a pet that might just eat them... if they're young enough and smell like its usual food.</td>
+			<td><img src="http://www.cs.mcgill.ca/~parauj2/010.png" width ="200" height="200"></td>
+			<td><input type="checkbox" name="item2"></td>
+			<td><input type="text" name="item2A"></td>	
+		</tr>
+	<!-- !!!!3rd ITEM: 4TH ROW!!!!!--->
+		<tr>
+		<th>011</th>
+			<td>Python for the anti-social</td>
+			<td>Why give your sibling an aquarium for Christmas, when you could give them a pet that might just eat them... if they're young enough and smell like its usual food.</td>
+			<td><img src="http://www.cs.mcgill.ca/~parauj2/011.png" width ="200" height="200"></td>
+			<td><input type="checkbox" name="item3"></td>
+			<td><input type="text" name="item3A"></td>
+
+		</tr>
+        <!-- !!!!4th ITEM: 5TH ROW!!!!!--->
+                <tr>
+                <th>100</th>
+                        <td>Fair trade coffee beans</td>
+                        <td>We can grind these delicious beans for you, upon request.
+(ground coffee may contain traces of python)</td>
+                        <td><img src="http://www.cs.mcgill.ca/~parauj2/100.png" width ="200" height="200"></td>
+                        <td><input type="checkbox" name="item4"></td>
+                        <td><input type="text" name="item4A"></td>
+
+                </tr>
+        <!-- !!!!5th ITEM: 6TH ROW!!!!!--->
+                <tr>
+                <th>101</th>
+                        <td>Tears of the gods</td>
+                        <td>Ever wonder why the gods are so angry? You would be too if your tear ducts had to pass pearls through them.</td>
+                        <td><img src="http://www.cs.mcgill.ca/~parauj2/101.png" width ="200" height="200"></td>
+                        <td><input type="checkbox" name="item5"></td>
+                        <td><input type="text" name="item5A"></td>
+
+                </tr>
+	</table>
+<!--====================================================================
+========================================================================-->
+	Username: <input type="username" name="uname"><br/>
+	Password: <input type="password" name="password"><br/>
+	<input type="submit" value="Purchase">
+
+	</form>
+
+
+
+
+</body>
+</html>
+
+

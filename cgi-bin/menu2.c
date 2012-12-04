@@ -10,7 +10,7 @@ int main()
 	char *data = getenv("QUERY_STRING");
         if(data == NULL)
 	{
-		printf("Error, could not read from login.c");
+		printf("<html><head><title>Input Error</title></head><body bgcolor=\"Red\">Error, could not read from login.c</body></html>");
 		exit(EXIT_FAILURE);
 	}
 	char type[50];
@@ -29,7 +29,7 @@ int main()
 	}
 	else
 	{
-		printf("UNDEFINED USER TYPE");
+		printf("<html><head><title>Input Error</title></head><body bgcolor=\"Red\">UNDEFINED USER TYPE</body></html>");
 		exit(EXIT_FAILURE);
 	}
 
@@ -47,10 +47,10 @@ int user(char *data)
 		//printf("%s%c%c\n","Content-Type:text/html;charset= iso-8859-1",13,10);
 		printf("<html>");	
 		printf("<head><title>Purchases</title></head>");	
-		printf("<body>Here is your purchase history.<br><br>");
+		printf("<body bgcolor=\"#66FF99\"><font face=\"Helvetica\">Here is your purchase history.<br><br>");
 		FILE *fp = fopen("log.csv", "r");
 		if (fp == NULL ) {
-			printf("Could not open file!<br><br>");
+			printf("Could not open log.csv file!<br><br>");
 			return EXIT_FAILURE;
 		}
 		char username[50];
@@ -72,7 +72,7 @@ int user(char *data)
 		
 		
 		printf("<form><input type=\"button\" value =\"Back to menu\" onClick=\"history.go(-1);return true;\"></form><br><br>");
-		printf("<form action=\"http://www.cs.mcgill.ca/~dwhitn/pythonpearlsplusplus.html\"><input value=\"Homepage\" type=\"submit\"></form></body></html>");
+		printf("<form action=\"http://www.cs.mcgill.ca/~dwhitn/pythonpearlsplusplus.html\"><input value=\"Homepage\" type=\"submit\"></form></font></body></html>");
 		
 		return(0);
 		}
@@ -143,7 +143,7 @@ int sys(char *data)
 		{
 			printf("<br /> must fill in all fields");
 			printf("<br /><form><input type=\"button\" value =\"Back to menu\" onClick=\"history.go(-1);return true;\"></form><br>");
-			printf("<form action=\"http://www.cs.mcgill.ca/~gmacra/homepage\"><input value=\"Homepage\" type=\"submit\"></form>");
+			printf("<form action=\"http://www.cs.mcgill.ca/~dwhitn/pythonpearlsplusplus.html\"><input value=\"Homepage\" type=\"submit\"></form>");
 //			printf("<br /> <a href=\"http://www.cs.mcgill.ca/~gmacra/homepage\">HOME</a>");
 			exit(EXIT_FAILURE);
 		}
@@ -177,7 +177,7 @@ int sys(char *data)
 			{   
 				printf("<br /> The delete field must be filled");
 				printf("<br /><form><input type=\"button\" value =\"Back to menu\" onClick=\"history.go(-1);return true;\"></form><br>");
-				printf("<form action=\"http://www.cs.mcgill.ca/~gmacra/homepage\"><input value=\"Homepage\" type=\"submit\"></form>");
+				printf("<form action=\"http://www.cs.mcgill.ca/~dwhitn/pythonpearlsplusplus.html\"><input value=\"Homepage\" type=\"submit\"></form>");
 
 				exit(EXIT_FAILURE);
 	                } 
@@ -212,7 +212,7 @@ int sys(char *data)
 		{
 			printf("<br /> must fill in all fields");
 			printf("<br /><form><input type=\"button\" value =\"Back to menu\" onClick=\"history.go(-1);return true;\"></form><br>");
-			printf("<form action=\"http://www.cs.mcgill.ca/~gmacra/homepage\"><input value=\"Homepage\" type=\"submit\"></form>");
+			printf("<form action=\"http://www.cs.mcgill.ca/~dwhitn/pythonpearlsplusplus.html\"><input value=\"Homepage\" type=\"submit\"></form>");
 
 			exit(EXIT_FAILURE);
 		} 
@@ -248,7 +248,7 @@ int sys(char *data)
 		{
 			printf("<br /> must fill in all fields");
 			printf("<br /><form><input type=\"button\" value =\"Back to menu\" onClick=\"history.go(-1);return true;\"></form><br>");
-			printf("<form action=\"http://www.cs.mcgill.ca/~gmacra/homepage\"><input value=\"Homepage\" type=\"submit\"></form>");
+			printf("<form action=\"http://www.cs.mcgill.ca/~dwhitn/pythonpearlsplusplus.html\"><input value=\"Homepage\" type=\"submit\"></form>");
 
 			exit(EXIT_FAILURE);
 		} 
@@ -317,7 +317,7 @@ int sys(char *data)
 	char line[200];
 	char line1[200];
 	char line2[200];
-	pFile = fopen ("Members.csv", "r");
+	pFile = fopen("Members.csv", "r");
 	if(pFile == NULL)
 	{
 		printf("\nCANT OPEN");
@@ -333,7 +333,7 @@ int sys(char *data)
 	fclose(pFile);
 	
 	printf("<br /><form><input type=\"button\" value =\"Back to menu\" onClick=\"history.go(-1);return true;\"></form><br>");
-	printf("<form action=\"http://www.cs.mcgill.ca/~gmacra/homepage\"><input value=\"Homepage\" type=\"submit\"></form>");
+	printf("<form action=\"http://www.cs.mcgill.ca/~dwhitn/pythonpearlsplusplus.html\"><input value=\"Homepage\" type=\"submit\"></form>");
 
 	exit(0);
 
